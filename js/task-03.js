@@ -14,9 +14,14 @@ const images = [
 ];
 
 const galleryListRef = document.querySelector(".gallery");
-console.log(galleryListRef);
 
+let result = images.map((item) => {
+  const itemGalleryListRef = document.createElement("li");
+  const imgItemGalleryListRef = document.createElement("img");
+  imgItemGalleryListRef.src = item.url;
+  imgItemGalleryListRef.alt = item.alt;
+  itemGalleryListRef.append(imgItemGalleryListRef);
+  return itemGalleryListRef;
+});
 
-let galleryItem= galleryListRef.map(item=>{
-  
-})
+galleryListRef.append(...result);
