@@ -15,13 +15,13 @@ const images = [
 
 const galleryListRef = document.querySelector(".gallery");
 
-let result = images.map((item) => {
-  const itemGalleryListRef = document.createElement("li");
-  const imgItemGalleryListRef = document.createElement("img");
-  imgItemGalleryListRef.src = item.url;
-  imgItemGalleryListRef.alt = item.alt;
-  itemGalleryListRef.append(imgItemGalleryListRef);
-  return itemGalleryListRef;
+let makeGallery = images.map((item) => {
+  const itemGalleryList = document.createElement("li");
+  const imgItemGalleryList = document.createElement("img");
+  imgItemGalleryList.src = item.url;
+  imgItemGalleryList.alt = item.alt;
+  itemGalleryList.append(imgItemGalleryList);
+  return itemGalleryList;
 });
 
-galleryListRef.append(...result);
+galleryListRef.append(...makeGallery);
